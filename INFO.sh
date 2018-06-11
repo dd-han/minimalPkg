@@ -4,7 +4,7 @@
 source /pkgscripts/include/pkg_util.sh
 
 package="dlcardPkg"
-version="1.0.0002"
+version="1.0.0003"
 displayname="dlcard nginx config package"
 maintainer="dd-han's working"
 arch="$(pkg_get_unified_platform)"
