@@ -5,6 +5,6 @@
 ### Actions after package installed.
 ### ex. create database, create symbolic link...
 
-ln -sf $SYNOPKG_PKGDEST/usr/bin/minimalPkg /usr/bin/
+ln -sf /var/packages/dlcardPkg/target/nginx-conf/www.dlcard.disabled.conf /usr/local/etc/nginx/conf.d/
 
 exit 0

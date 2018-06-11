@@ -4,17 +4,19 @@
 case $1 in
 	start)
 		### Start this package.
-		minimalPkg "Start"
+		rm -rf /usr/local/etc/nginx/conf.d/www.dlcard.disabled.conf
+		ln -sf /var/packages/dlcardPkg/target/nginx-conf/www.dlcard.enable.conf /usr/local/etc/nginx/conf.d/
 		exit 0
 	;;
 	stop)
 		### Stop this package.
-		minimalPkg "Stop"
+		rm -rf /usr/local/etc/nginx/conf.d/www.dlcard.enable.conf
+		ln -sf /var/packages/dlcardPkg/target/nginx-conf/www.dlcard.disabled.conf /usr/local/etc/nginx/conf.d/
 		exit 0
 	;;
 	status)
 		### Check package alive.
-		if [ -h "/usr/bin/minimalPkg" ]; then
+		if [ -h "/usr/local/etc/nginx/conf.d/www.dlcard.enable.conf" ]; then
 			exit 0
 		else
 			exit 1

@@ -5,6 +5,7 @@
 ### Actions after package uninstalled.
 ### ex. remove garbage files.
 
-rm -f /usr/bin/minimalPkg
+rm -rf /usr/local/etc/nginx/conf.d/www.dlcard.disabled.conf
+rm -rf /usr/local/etc/nginx/conf.d/www.dlcard.enable.conf
 
 exit 0
