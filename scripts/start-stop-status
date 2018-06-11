@@ -6,12 +6,14 @@ case $1 in
 		### Start this package.
 		rm -rf /usr/local/etc/nginx/conf.d/www.dlcard.disabled.conf
 		ln -sf /var/packages/dlcardPkg/target/nginx-conf/www.dlcard.enable.conf /usr/local/etc/nginx/conf.d/
+                nginx -t && nginx -s reload
 		exit 0
 	;;
 	stop)
 		### Stop this package.
 		rm -rf /usr/local/etc/nginx/conf.d/www.dlcard.enable.conf
 		ln -sf /var/packages/dlcardPkg/target/nginx-conf/www.dlcard.disabled.conf /usr/local/etc/nginx/conf.d/
+                nginx -t && nginx -s reload
 		exit 0
 	;;
 	status)
